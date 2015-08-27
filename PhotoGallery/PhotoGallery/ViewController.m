@@ -7,65 +7,49 @@
 //
 
 #import "ViewController.h"
+#include "ControlHeader.h"
+#import "horizontalTableViewCell.h"
 
 @interface ViewController ()
 @property (nonatomic,strong) NSMutableData* jsonData;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    self.jsonData = [NSMutableData data];
-    NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.10.104/imageData.php"]];
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
-
+  // Do any additional setup after loading the view, typically from a nib.
+    NSString *url_Img1 = @"http://192.168.10.104/imageData.php";
+    NSString *url_Img2 = @"image.jpg";
+    
+    NSString *url_Img_FULL = [url_Img1 stringByAppendingPathComponent:url_Img2];
+    
+    NSLog(@"Show url_Img_FULL: %@",url_Img_FULL);
+    self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url_Img_FULL]]];
+    
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    NSLog(@"didReceiveResponse");
-    [self.jsonData setLength:0];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [self.jsonData appendData:data];
+    return 1;
 }
 
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"didFailWithError");
-   // NSLog([NSString stringWithFormat:@"Connection failed: %@", [error description]]);
-}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellID = @"CellIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    }
+   
+    
+    return cell;
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSLog(@"connectionDidFinishLoading");
-    NSLog(@"Succeeded! Received %lu bytes of data",(unsigned long)[self.jsonData length]);
-    
-    // convert to JSON
-    NSError *myError = nil;
-    NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self.jsonData options:NSJSONReadingMutableLeaves error:&myError];
-    
-    // show all values
-    for(id key in res) {
-        
-        id value = [res objectForKey:key];
-        
-        NSString *keyAsString = (NSString *)key;
-        NSString *valueAsString = (NSString *)value;
-        
-        NSLog(@"key: %@", keyAsString);
-        NSLog(@"value: %@", valueAsString);
-    }
-    
-    // extract specific value...
-    NSArray *results = [res objectForKey:@"results"];
-    
-    for (NSDictionary *result in results) {
-        NSString *icon = [result objectForKey:@"icon"];
-        NSLog(@"icon: %@", icon);
-    }
-    
 }
 
 - (void)didReceiveMemoryWarning {

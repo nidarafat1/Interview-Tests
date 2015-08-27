@@ -49,6 +49,10 @@
                             <constraint firstItem="Pni-tT-MlX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="zkl-nf-U4G"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="som-4t-sR2" id="ktC-ye-xGw"/>
+                        <outlet property="tableView" destination="ojh-5c-JJU" id="gqC-73-4RY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

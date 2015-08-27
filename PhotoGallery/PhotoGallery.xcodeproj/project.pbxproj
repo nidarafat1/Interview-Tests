@@ -37,6 +37,7 @@
 		C002B71C1B8B11700062B550 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C002B7051B8B116F0062B550 /* UIRefreshControl+AFNetworking.m */; };
 		C002B71D1B8B11700062B550 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C002B7071B8B116F0062B550 /* UIWebView+AFNetworking.m */; };
 		C002B71F1B8B12B20062B550 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C002B71E1B8B12B20062B550 /* Default.png */; };
+		EB2171881B8EDF460074353C /* horizontalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2171871B8EDF460074353C /* horizontalTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,9 @@
 		C002B7061B8B116F0062B550 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		C002B7071B8B116F0062B550 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		C002B71E1B8B12B20062B550 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		EB2171861B8EDF460074353C /* horizontalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = horizontalTableViewCell.h; sourceTree = "<group>"; };
+		EB2171871B8EDF460074353C /* horizontalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = horizontalTableViewCell.m; sourceTree = "<group>"; };
+		EB2171891B8EE01F0074353C /* ControlHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,9 @@
 				C002B6B41B8B0FF50062B550 /* AppDelegate.m */,
 				C002B6B61B8B0FF50062B550 /* ViewController.h */,
 				C002B6B71B8B0FF50062B550 /* ViewController.m */,
+				EB2171861B8EDF460074353C /* horizontalTableViewCell.h */,
+				EB2171871B8EDF460074353C /* horizontalTableViewCell.m */,
+				EB2171891B8EE01F0074353C /* ControlHeader.h */,
 				C002B6B91B8B0FF50062B550 /* Main.storyboard */,
 				C002B6BC1B8B0FF50062B550 /* Images.xcassets */,
 				C002B6BE1B8B0FF50062B550 /* LaunchScreen.xib */,
@@ -396,6 +403,7 @@
 				C002B71D1B8B11700062B550 /* UIWebView+AFNetworking.m in Sources */,
 				C002B6B21B8B0FF50062B550 /* main.m in Sources */,
 				C002B7151B8B11700062B550 /* SBJsonWriter.m in Sources */,
+				EB2171881B8EDF460074353C /* horizontalTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +598,7 @@
 				C002B6D11B8B0FF50062B550 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C002B6D21B8B0FF50062B550 /* Build configuration list for PBXNativeTarget "PhotoGalleryTests" */ = {
 			isa = XCConfigurationList;
@@ -598,6 +607,7 @@
 				C002B6D41B8B0FF50062B550 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
